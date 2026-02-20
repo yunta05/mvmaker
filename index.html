@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MP3 + 静止画 → MP4 変換</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>MP3 + 静止画 → MP4</h1>
+      <p class="description">
+        MP3 と静止画をアップロードすると、静止画の上に<span>透過度 30%</span>のオーディオスペクトラムを重ねた MP4 をブラウザ上で生成します。
+      </p>
+
+      <section class="card">
+        <label>
+          静止画ファイル (jpg/png/webp)
+          <input id="imageInput" type="file" accept="image/*" />
+        </label>
+
+        <label>
+          音声ファイル (mp3)
+          <input id="audioInput" type="file" accept="audio/mpeg" />
+        </label>
+
+        <button id="generateBtn" type="button" disabled>MP4 を生成</button>
+        <p id="status" role="status" aria-live="polite">ファイルを選択してください。</p>
+        <progress id="progress" max="1" value="0" hidden></progress>
+
+        <a id="downloadLink" hidden download="output.mp4">MP4 をダウンロード</a>
+      </section>
+
+      <section class="preview card">
+        <h2>プレビュー</h2>
+        <img id="previewImage" alt="アップロードされた画像のプレビュー" />
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
